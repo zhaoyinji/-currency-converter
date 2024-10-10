@@ -6,7 +6,6 @@ const router = Router()
 // eslint-disable-next-line @typescript-eslint/no-misused-promises
 router.post('/', async function (req, res, next) {
   const { sourceCurrency, targetCurrency, amount } = req.body
-  console.log(req.headers["x-csrf-token"])
 
   try {
     const rate = await getExchangeRate(sourceCurrency, targetCurrency)
